@@ -10,6 +10,7 @@ On cherche le nombre de features optimal
 - PCA (Elise)
 - UMAP (Elise)
 - GOE (Nathalie)
+- Zinb-Wave (both)
 
 ####################
 Determining the optimal nb of clusters
