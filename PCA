@@ -1,7 +1,16 @@
 # PCA
 # let's do a PCA and find the optimal number of PCs
 
+# load the data
+
+# Prepare the data
+
+# do the PCA
+
+
 # For the optimal nb of PCs I can do
 # Jackstraw
+
 # Screeplot
+
 # Manually looking at the shapes of the plots in the PCA space
