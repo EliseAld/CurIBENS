@@ -24,10 +24,11 @@ for (i in 1:ncol(matrix)) {
 
 # Centering
 for (i in 1:ncol(matrix)) {
-  matrix[,i] <- matrix[,i] - mean(matrix[i])
+  matrix[,i] <- matrix[,i] - mean(matrix[,i])
 }
 
 # do the PCA
+pca <- prcomp(t(matrix))
 
 
 # For the optimal nb of PCs I can do
