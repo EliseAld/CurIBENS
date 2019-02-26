@@ -1,6 +1,6 @@
 # CurIBENS
 
-Benchamrking of different steps in the scRNAseq analysis of the Guo dataset (NSCLC, 2018)
+Benchmarking of different steps in the scRNAseq analysis of the Guo dataset (NSCLC, 2018)
 
 ####################
 Dimension reduction
@@ -11,6 +11,9 @@ On cherche le nombre de features optimal
 - UMAP (Elise)
 - GOE (Nathalie)
 - Zinb-Wave (both)
+- NMF (Nathalie)
+- sparse PCA (Elise)
+https://web.stanford.edu/~hastie/Papers/spc_jcgs.pdf
 
 ####################
 Determining the optimal nb of clusters
