@@ -11,6 +11,9 @@ On cherche le nombre de features optimal
 - UMAP (Elise)
 - GOE (Nathalie)
 - Zinb-Wave (both)
+- NMF (Nathalie)
+- sparse PCA (Elise)
+https://web.stanford.edu/~hastie/Papers/spc_jcgs.pdf
 
 ####################
 Determining the optimal nb of clusters
@@ -31,6 +34,7 @@ Clustering
 - DBScan + Minkowski (both)
 - Louvain based Seurat (both)
 - SIMLR (both)
+- NMF (Elise)
 
 ####################
 Goodness of fit
