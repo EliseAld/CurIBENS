@@ -34,6 +34,7 @@ Clustering
 - DBScan + Minkowski (both)
 - Louvain based Seurat (both)
 - SIMLR (both)
+- NMF (Elise)
 
 ####################
 Goodness of fit
@@ -41,6 +42,6 @@ Goodness of fit
 
 On essaie d'évaluer la justesse du clustering sur le dataset de Guo coupé en train et test sets
 - density for each cluster using dbscan (Nathalie)
-- desnity for each cluster w/ own code (both)
+- density for each cluster w/ own code (both)
 - MSE on the clustering identity (Elise)
 
