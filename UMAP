@@ -30,7 +30,8 @@ for (i in 1:ncol(matrix)) {
 # do the UMAP
 library(umap)
 umap.config <- umap.defaults
-umap.config$n_neighbors <- 10
+umap.config$n_neighbors <- 30
+umap.config$min_dist <- 0
 umap.config$n_components <- 50
 umap.config$verbose <- T
 umap <- umap(t(matrix), config = umap.config, method = "umap-learn")
