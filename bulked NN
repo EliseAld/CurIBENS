@@ -1,5 +1,18 @@
 # Merge a cell with its k NN
 
+# Compute the distance matrix
+distance <- dist(t(data))
+
 # Getting the k NN for each cell
+k <- c(2,5,10,20,30,50)
+knn <- matrix(,nrow=k[i],ncol=ncol(data))
 
+for (j in 1:ncol(data)) {
+  knn[,j] <- names(sort(distance[,j])[1:k[i]])
+}
 
+# Merging the cells with their k NN in data_merge
+data_merge = data
+for (j in 1:ncol(data)) {
+  data_merge[,j] <- rowSums(data[,knn[,j]])
+}
