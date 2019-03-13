@@ -19,13 +19,14 @@ https://web.stanford.edu/~hastie/Papers/spc_jcgs.pdf
 Determining the optimal nb of clusters
 ####################
 
-- ICA + MSTD (both)
+- ICA + MSTD (both) 
 en cours
 - ICA + MSTD w/ bulked clusters (Nathalie)
-- ICA + MSTD w/ bulked NN (Elise)
-- ICA + MSTD w/ bulked cells (Nathalie)
-- Evaluation on clustree (Elise)
+- ICA + MSTD w/ bulked NN (Elise)   
 en cours
+- ICA + MSTD w/ bulked cells (Nathalie)
+- Evaluation on clustree (Elise)      
+en cours1
 - Silhouette (Nathalie)
 - Packing nb (paper from Kegl) (both)
 
