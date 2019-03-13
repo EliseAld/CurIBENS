@@ -20,10 +20,12 @@ Determining the optimal nb of clusters
 ####################
 
 - ICA + MSTD (both)
+en cours
 - ICA + MSTD w/ bulked clusters (Nathalie)
 - ICA + MSTD w/ bulked NN (Elise)
 - ICA + MSTD w/ bulked cells (Nathalie)
 - Evaluation on clustree (Elise)
+en cours
 - Silhouette (Nathalie)
 - Packing nb (paper from Kegl) (both)
 
