@@ -16,7 +16,8 @@ en cours
 en cours1   
 en cours2
 - Silhouette (Nathalie)
-- Packing nb for the optimal number of features ! (paper from Kegl) (both)
+- Packing nb for the optimal number of features ! (paper from Kegl) (both)        
+en cours
 
 ####################
 Clustering
