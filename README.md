@@ -13,7 +13,8 @@ en cours
 en cours
 - ICA + MSTD w/ bulked cells (Nathalie)
 - Evaluation on clustree (Elise)          
-en cours1
+en cours1   
+en cours2
 - Silhouette (Nathalie)
 - Packing nb (paper from Kegl) (both)
 
