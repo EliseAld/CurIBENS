@@ -12,7 +12,8 @@ en cours
 en cours
 - SIMLR (both)      
 en cours
-- NMF (Elise)
+- NMF (Elise)     
+en cours
 
 ####################
 Goodness of fit
