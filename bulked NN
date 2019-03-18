@@ -1,4 +1,4 @@
-# Merge a cell with its k NN
+# Merge a cell with its k NN - do it with dbscan
 
 # Compute the distance matrix
 distance <- dist(t(data))
