@@ -6,9 +6,12 @@ Benchmarking of different steps in the scRNAseq analysis of the Guo dataset (NSC
 Clustering
 ####################
 
-- DBScan + Minkowski (both)
-- Louvain based Seurat (both)
-- SIMLR (both)
+- DBScan + Minkowski (both)       
+en cours
+- Louvain based Seurat (both)     
+en cours
+- SIMLR (both)      
+en cours
 - NMF (Elise)
 
 ####################
