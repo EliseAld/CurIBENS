@@ -1,0 +1,6 @@
+# We use the clustering tool from Seurat
+library(Seurat)
+
+# Let's run the algorithm
+seurat <- FindClusters(seurat, genes.use=hvg, resolution=resol)
+table(seurat@ident)
