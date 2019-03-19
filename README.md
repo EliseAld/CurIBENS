@@ -12,6 +12,8 @@ On essaie d'évaluer la justesse du clustering sur le dataset de Guo coupé en t
 - MSE on the clustering identity (Elise)
 
 ####################
-Goodness of fit - Metric Learning
+Metric Learning
 ####################
 
+- step 1 : constraints
+- step 2 : ML with Minkowski based similarity
