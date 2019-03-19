@@ -1,0 +1,6 @@
+#######
+Metrics learning
+#######
+ - https://arxiv.org/pdf/1704.02268.pdf
+ The idea here is to create the must link/cannot link constraint with an unlabeled dataset
+ For each cell, we just want to get the closest and the farthest cells
