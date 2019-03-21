@@ -16,7 +16,7 @@ en cours
 en cours1   
 en cours2
 - Silhouette (Nathalie)
-- Packing nb for the optimal number of features ! (paper from Kegl) (both)        
+- Packing nb for the optimal number of features ! http://papers.nips.cc/paper/2290-intrinsic-dimension-estimation-using-packing-numbers.pdf (both)        
 en cours
 
 ####################
