@@ -6,12 +6,15 @@
 # choose the scale r
 r = c(r1,r2)
 
+# Define metric between two vectors
+
+# Calculate the dimension of the manifold D
 low_dimension_estimate <- function(data,r,epsilon,metric) {
-  L=matrix(,ncol=2,nrow=ncol(data)))
+  L=matrix(,ncol=2,nrow=ncol(data))
   for (l in 1:ncol(data)) {
     data_perm <- data[,sample(ncol(data),ncol(data))]
     for (k in 1:2) {
-      C <- data_perm[,1]
+      C <- matrix(data_perm[,1])
       for (i in 1:ncol(data)) {
         index = i
         for (j in 1:ncol(C)) {
@@ -19,7 +22,7 @@ low_dimension_estimate <- function(data,r,epsilon,metric) {
             index <- n+1
           }
         }
-        if (index < n+1) {
+        if (index < (ncol(data)+1)) {
           C <- cbind(C,data[,i])
         }
       }
