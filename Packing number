@@ -22,7 +22,7 @@ low_dimension_estimate <- function(data,r,epsilon,metric) {
             index <- n+1
           }
         }
-        if (index < (ncol(data)+1)) {
+        if (index < (ncol(data)+1))) {
           C <- cbind(C,data[,i])
         }
       }
