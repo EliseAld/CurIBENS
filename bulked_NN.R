@@ -14,5 +14,5 @@ names(knn) = k
 # Merging the cells with their k[i] NN in data_merge
 data_merge = data
 for (j in 1:nrow(data)) {
-  data_merge[j,] <- rowSums(data[c(j,knn[[i]][j,]),])/k[i]
+  data_merge[j,] <- rowSums(data[c(j,knn[[i]][j,]),])/(k[i]+1)
 }
