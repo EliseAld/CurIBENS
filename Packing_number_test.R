@@ -2,16 +2,26 @@
 # Warning it's not an estimation of the number of clusters but of the lower intrinsic dimensions of a high dimensional dataset
 
 # We need to calculate the r-packing number and then the dimension D of the data (genes x cells)
-
-# download data and choose r1 & r2
-# take LN from Azizi eg dataset 5
-data5 <- read.csv2("//synapse.curie.net/Stockage_Immunologie/SOUMELIS/Elise/scRNAseq/Public_sc_data/GEO/Azizi_breast_2018/LN/BC2/LYMPHNODE5_counts.csv", sep=",", header=T)
-rownames(data5) <- data5[,1]
-data5 <- data5[,-1]
-data5[is.na(data5)] <- 0
-data <- data.frame(t(data5))
-rm(data5)
-
+ 
+# download data
+path_curie = "//synapse.curie.net/Stockage_Immunologie/SOUMELIS/Elise/"
+path_macbk = "/Users/elise/Desktop/Ordi_Curie/"
+obj_to_load = "scRNAseq/Public_sc_data/GEO/Guo_lung_2018/GSE99254_NSCLC.TCell.S12346.count.txt"
+label = "scRNAseq/Public_sc_data/GEO/Guo_lung_2018/Guo_labels.csv"
+path = path_curie
+rm(path_macbk)
+rm(path_curie)
+# Load data
+matrix <- read.table(paste0(path,obj_to_load), header=T)
+matrix <- matrix[,-1]
+matrix <- matrix[!is.na(matrix[,1]),]
+rownames(matrix) <- matrix[,1]
+matrix <- matrix[,-1]
+data <- matrix
+rm(matrix)
+# take subset of Guo dataset (500 cells)
+data <- data[,sample(1:ncol(data),500)]
+ 
 # choose the scale r (r2 > r1)
 distance <- stats::dist(t(data))
 r1 = max(distance[1:length(distance)], na.rm=T)/100
