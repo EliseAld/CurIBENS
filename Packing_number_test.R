@@ -24,6 +24,7 @@ data <- data[,sample(1:ncol(data),500)]
  
 # choose the scale r (r2 > r1)
 distance <- stats::dist(t(data))
+hist(distance,breaks=1000)
 r1 = max(distance[1:length(distance)], na.rm=T)/100
 r2 = max(distance[1:length(distance)], na.rm=T)
 r = c(r1,r2)
@@ -65,7 +66,7 @@ low_dimension_estimate <- function(data,r,epsilon,metric) {
     }
   }
 }
-low_dimension_estimate(data,r,epsilon,metric)
+D <- low_dimension_estimate(data,r,epsilon,metric)
 
 # look at the scale dependency of D
 scale_dep <- function(data,R,epsilon,metric) {
@@ -78,6 +79,5 @@ scale_dep <- function(data,R,epsilon,metric) {
 }
 
 # test
-hist(distance,breaks=1000)
-R = c(1000,1500,2000,5000,10000)
+R = c(10000,20000,50000,100000)
 scale_dep(data,R,epsilon,metric)
