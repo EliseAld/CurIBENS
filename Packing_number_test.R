@@ -69,5 +69,5 @@ scale_dep <- function(data,R,epsilon,metric) {
 
 # test
 hist(distance,breaks=1000)
-R = c(500,1000,1500,2000,5000,10000)
+R = c(1000,1500,2000,5000,10000)
 scale_dep(data,R,epsilon,metric)
