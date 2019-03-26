@@ -15,5 +15,7 @@ On essaie d'évaluer la justesse du clustering sur le dataset de Guo coupé en t
 Metric Learning
 ####################
 
+- step 0 : prepa data
 - step 1 : constraints
 - step 2 : ML with Minkowski based similarity
+- step 3 : write cost function
