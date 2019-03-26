@@ -1,7 +1,7 @@
 # load data
 # path
-data
-common <- "//synapse.curie.net/Stockage_Immunologie/SOUMELIS/Elise/scRNAseq/"
+data <- "GSE99254_NSCLC.TCell.S12346.count.txt"
+path <- "/Users/elise/Desktop/Guo_lung_2018/"
 data <- read.csv2(paste0(path,data), sep=",", header=T)
 data[1:5,1:5]
 # data is cell x gene
