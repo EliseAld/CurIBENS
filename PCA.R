@@ -19,19 +19,22 @@ mitogenes <- grep(pattern="^MT",x=rownames(matrix),value=T)
 mitopercent <- colSums(matrix[mitogenes, ])/colSums(matrix)
 hist(mitopercent,breaks=1000)
 
-# Normalization
-for (i in 1:ncol(matrix)) {
-  matrix[,i] <- matrix[,i]/sum(matrix[,i])
+# Write the custom function to perform PCA on a gene x cell matrix
+pca <- function(matrix, norm, center, transpose) {
+  # matrix is a gene x cell matrix
+  # norm, center and transpose are booleans
+  if (norm == T) {
+    matrix <- apply(matrix,2,function(x) x/var(x))
+  }
+  if (center == T) {
+    matrix <- apply(matrix,2,function(x) x-mean(x))
+  }
+  if (transpose == T) {
+    matrix <- t(matrix)
+  }
+  pca <- prcomp(t(matrix))
+  return(pca)
 }
-
-# Centering
-for (i in 1:ncol(matrix)) {
-  matrix[,i] <- matrix[,i] - mean(matrix[,i])
-}
-
-# do the PCA
-pca <- prcomp(t(matrix))
-
 
 # For the optimal nb of PCs I can do
 # Jackstraw
