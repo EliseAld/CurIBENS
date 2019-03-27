@@ -19,14 +19,22 @@ mitopercent <- colSums(matrix[mitogenes, ])/colSums(matrix)
 hist(mitopercent,breaks=1000)
 # Distribution is good
 
-# Normalization & centering
-matrix <- apply(matrix,2,function(x) x/max(x))
-matrix <- apply(matrix,2,function(x) x-mean(x))
+# Write the custom function to run sPCA on a gene x cell matrix
+sPCA <- function(matrix, norm, center, transpose) {
+  if (transpose == T) {
+    matrix <- t(matrix)
+  }
+  if (norm == T) {
+    matrix <- apply(matrix,2,function(x) x/var(x))
+  }
+  if (center == T) {
+    matrix <- apply(matrix,2,function(x) x-mean(x))
 
-# do the sparse PCA
-library(nsprcomp)
-spca <- nsprcomp(t(matrix),center=F)
-
+  }
+  library(nsprcomp)
+  spca <- nsprcomp(t(matrix),center=F)
+  return(spca)
+}
 
 # For the optimal nb of PCs I can do
 # Jackstraw
