@@ -17,21 +17,24 @@ mitogenes <- grep(pattern="^MT",x=rownames(matrix),value=T)
 mitopercent <- colSums(matrix[mitogenes, ])/colSums(matrix)
 hist(mitopercent,breaks=1000)
 
-# Normalization
-for (i in 1:ncol(matrix)) {
-  matrix[,i] <- matrix[,i]/sum(matrix[,i])
+# Write the custom function to do the UMAP on a gene x cell matrix
+umap <- function(matrix, norm, center, transpose, n_neighbors, min_dist, n_compo) {
+  # matrix is gene x cell matrix
+  # norm, center and transpose are booleans
+  if (transpose == T) {
+    matrix <- (matrix)
+  }
+  if (norm = T) {
+    matrix <- apply(matrix,2,function(x) x/var(x))
+  }
+  if (center = T) {
+    matrix <- apply(matrix,2,function(x) x-mean(x))
+  }
+  library(umap)
+  umap.config <- umap.defaults
+  umap.config$n_neighbors <- n_neighbors
+  umap.config$min_dist <- min_dist
+  umap.config$n_components <- n_components
+  umap <- umap(t(matrix), config = umap.config, method = "umap-learn")
+  return(umap)
 }
-
-# Centering
-for (i in 1:ncol(matrix)) {
-  matrix[,i] <- matrix[,i] - mean(matrix[,i])
-}
-
-# do the UMAP
-library(umap)
-umap.config <- umap.defaults
-umap.config$n_neighbors <- 30
-umap.config$min_dist <- 0
-umap.config$n_components <- 50
-umap.config$verbose <- T
-umap <- umap(t(matrix), config = umap.config, method = "umap-learn")
