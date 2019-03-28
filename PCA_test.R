@@ -5,6 +5,8 @@ PCA <- pca(matrix, norm=T, center=T, transpose=F)
 # genes projection in PCA space are in PCA$rotation
 
 plot(PCA$sdev)
+library(factoextra)
+fviz_eig(PCA)
 # on the elbow plot there is an elbow at the 3rd PC
 
 plot(PCA$x[,1],PCA$x[,2])
@@ -30,7 +32,6 @@ hist(PCA$x[,10],breaks=100000)
 hist(PCA$x[,11],breaks=100000)
 hist(PCA$x[,12],breaks=100000)
 # it looks super strange... on the PCs plot
-# The 6th PC look gaussian alreadu
+# The 6th PC look gaussian already
 
-library(factoextra)
-fviz_eig(PCA)
+# Let's choose 5 PCs
