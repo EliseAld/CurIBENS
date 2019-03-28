@@ -1,6 +1,6 @@
 # Imported from https://github.com/willtownes/scrna2019/blob/master/algs/existing.R
 
-library(BiocParallel
+library(BiocParallel)
 library(zinbwave)
 
 zinbwave<-function(Y,L=2,parallel=FALSE){
