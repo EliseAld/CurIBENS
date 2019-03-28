@@ -14,6 +14,7 @@ en cours
 - GOE (Nathalie)
 - Zinb-Wave (both)
 - NMF (Nathalie)
+- Mofa (Nathalie)
 - sparse PCA (Elise)
 https://web.stanford.edu/~hastie/Papers/spc_jcgs.pdf          
 en cours
