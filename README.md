@@ -14,6 +14,7 @@ en cours
 en cours
 - NMF (Elise)     
 en cours
+- LDA (semantic analysis)
 
 ####################
 Goodness of fit
@@ -23,4 +24,3 @@ On essaie d'évaluer la justesse du clustering sur le dataset de Guo coupé en t
 - density for each cluster using dbscan (Nathalie)
 - density for each cluster w/ own code (both)
 - MSE on the clustering identity (Elise)
-
