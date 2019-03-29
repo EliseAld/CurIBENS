@@ -2,5 +2,5 @@
 library(BiocParallel)
 library(zinbwave)
 
-zinb <- zinbwave(t(matrix),L=2)
+zinb <- zinbwave(matrix,L=2)
 sum(apply(matrix,1,sum) == 0)
