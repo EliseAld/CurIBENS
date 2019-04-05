@@ -1,6 +1,9 @@
 # test the custom ZinbWave function on Guo data
-library(BiocParallel)
 library(zinbwave)
 
-zinb <- zinbwave(matrix,L=2)
-sum(apply(matrix,1,sum) == 0)
+# test the custom zinbwave function on Guo data
+matrix <- read.table("Guo_data_prePCA.txt", header=T)
+zinb <- zinbwave(matrix,L=5)
+
+# Save obj
+save(zinb,file="zinb")
