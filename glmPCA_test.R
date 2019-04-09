@@ -182,16 +182,16 @@ glmpca<-function(Y,L,fam=c("poi","nb","mult","bern"),ctl=list(maxIter=100,eps=1e
     for(l in 1:(L+1)){
       ig<- infograd(etafunc(U,V))
       #no penalty on intercept terms
-      grads<- (ig$grad)%*%U[,l] - penalty*V[,l]*(l>1)
+      grads <- (ig$grad)%*%U[,l] - penalty*V[,l]*(l>1)
       grads <- replace(grads, which(is.na(grads)), 0)
-      infos<- (ig$info) %*% U[,l]^2 + penalty*(l>1)
-      V[,l]<-V[,l]+grads/infos
+      infos <- (ig$info) %*% U[,l]^2 + penalty*(l>1)
+      V[,l] <- V[,l] + as.vector(grads/infos)
     }
     for(l in vid){
       ig<- infograd(etafunc(U,V))
       grads<- crossprod(ig$grad, matrix(V[,l],nrow=nrow(ig$grad))) - penalty*U[,l]
       infos<- crossprod(ig$info, V[,l]^2) + penalty
-      U[,l]<-U[,l]+grads/infos
+      U[,l]<-U[,l]+ as.vector(grads/infos)
     }
   }
   res<-ortho(U[,vid],V[,vid],0,V[,1],ret="df")
