@@ -16,7 +16,7 @@
  
 # Other
 #PBS -j oe
-#PBS -o /data/tmp/zela/CurIBENS/PCA_log
+#PBS -o /data/tmp/zela/CurIBENS/dimension_reduction /PCA_log
 #PBS -p 900
 
 
@@ -31,9 +31,9 @@ echo Directory is `pwd`
 # Main
 # ==============================================================================
 export PATH="/data/users/eamblard/tmp/R-3.5.3/bin:$PATH"
-script_dir="/data/tmp/zela/CurIBENS"
+script_dir="/data/tmp/zela/CurIBENS/dimension_reduction"
 script="PCA_test.R"
-working_directory="/data/tmp/zela/CurIBENS"
+working_directory="/data/tmp/zela/CurIBENS/dimension_reduction"
 
 echo Start = `date`
 cd $working_directory

@@ -5,10 +5,10 @@ umap <- function(matrix, norm, center, transpose, n_neighbors, min_dist, n_compo
   if (transpose == T) {
     matrix <- (matrix)
   }
-  if (norm = T) {
+  if (norm == T) {
     matrix <- apply(matrix,2,function(x) x/var(x))
   }
-  if (center = T) {
+  if (center == T) {
     matrix <- apply(matrix,2,function(x) x-mean(x))
   }
   library(umap)
