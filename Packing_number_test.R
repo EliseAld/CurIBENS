@@ -4,32 +4,12 @@
 # We need to calculate the r-packing number and then the dimension D of the data (genes x cells)
  
 # download data
-path_curie = "//synapse.curie.net/Stockage_Immunologie/SOUMELIS/Elise/"
-path_macbk = "/Users/elise/Desktop/Ordi_Curie/"
-obj_to_load = "scRNAseq/Public_sc_data/GEO/Guo_lung_2018/GSE99254_NSCLC.TCell.S12346.count.txt"
-label = "scRNAseq/Public_sc_data/GEO/Guo_lung_2018/Guo_labels.csv"
-path = path_curie
-rm(path_macbk)
-rm(path_curie)
-# Load data
-matrix <- read.table(paste0(path,obj_to_load), header=T)
-matrix <- matrix[,-1]
-matrix <- matrix[!is.na(matrix[,1]),]
-rownames(matrix) <- matrix[,1]
-matrix <- matrix[,-1]
-data <- matrix
+matrix <- read.table("Guo_data_prePCA.txt", header=T)
+data <- t(matrix)
 rm(matrix)
-# take subset of Guo dataset (500 cells)
-data <- data[,sample(1:ncol(data),500)]
- 
+# data is cell x gene
+
 # choose the scale r (r2 > r1)
-distance <- stats::dist(t(data))
-hist(distance,breaks=1000)
-r1 = max(distance[1:length(distance)], na.rm=T)/100
-r2 = max(distance[1:length(distance)], na.rm=T)
-r = c(r1,r2)
-rm(r1)
-rm(r2)
 
 # define metric
 metric <- function(x,y) {
@@ -66,7 +46,6 @@ low_dimension_estimate <- function(data,r,epsilon,metric) {
     }
   }
 }
-D <- low_dimension_estimate(data,r,epsilon,metric)
 
 # look at the scale dependency of D
 scale_dep <- function(data,R,epsilon,metric) {
@@ -80,4 +59,8 @@ scale_dep <- function(data,R,epsilon,metric) {
 
 # test
 R = c(10000,20000,50000,100000)
+
+# plot and save
+pdf("packing_nb.pdf")
 scale_dep(data,R,epsilon,metric)
+dev.off()

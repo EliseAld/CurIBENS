@@ -3,6 +3,7 @@
 
 # It should be a Seurat object
 library(Seurat)
+load("Seurat_PCA.Robj")
 
 # Vector of 200 resolutions to be tested
 resol <- seq(0.01, 2, 0.01)
@@ -13,12 +14,17 @@ cluster_nb = c()
 reduction.type <- "pca"
 dims.use <- 1:20
 for (i in resol) {
-  data_seurat <- Seurat::FindClusters(data_seurat, reduction.type = reduction.type, dims.use = dims.use, resolution = i, print.output = 0, force.recalc = 1, n.iter = 10000)
-  cluster_nb = c(cluster_nb,length(table(data_seurat@ident)))
+  seurat <- Seurat::FindClusters(seurat, reduction.type = reduction.type, dims.use = dims.use, resolution = i, print.output = 0, force.recalc = 1, n.iter = 10000)
+  cluster_nb = c(cluster_nb,length(table(seurat@ident)))
 }
 
-# Plot the result
-plot(cluster_nb,resol)
+# Plot the result and save it
+pdf("clustree1.pdf")
+plot(cluster_nb,resol,xlab = "Number of clusters", ylab = "Resolution")
+dev.off()
+
+# Save the results
+write.table(cluster_nb,"clustree1.txt")
 
 # Find the gap
 # Use a 2-line clustering algorithm (https://ieeexplore.ieee.org/abstract/document/1467530)
