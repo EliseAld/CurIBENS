@@ -15,7 +15,7 @@ umap <- function(matrix, norm, center, transpose, n_neighbors, min_dist, n_compo
   umap.config <- umap.defaults
   umap.config$n_neighbors <- n_neighbors
   #umap.config$min_dist <- min_dist
-  umap.config$n_components <- n_components
+  umap.config$n_components <- n_compo
   umap <- umap(t(matrix), config = umap.config, method = "umap-learn")
   return(umap)
 }

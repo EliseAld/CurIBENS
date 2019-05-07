@@ -6,7 +6,7 @@
 # resources
 #PBS -l walltime=10:00:00
 #PBS -l mem=20gb
-#PBS -l nodes=1:ppn=20
+#PBS -l nodes=1:ppn=2
 #PBS -q batch
  
 # Information
