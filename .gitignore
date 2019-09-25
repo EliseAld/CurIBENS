@@ -1,0 +1,5 @@
+# Stuff that we don't want to upload
+.DS_Store
+*.pdf
+*.txt
+*.Robj
