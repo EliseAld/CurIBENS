@@ -3,3 +3,6 @@
 *.pdf
 *.txt
 *.Robj
+*.RData
+*.Rhistory
+*.pages
