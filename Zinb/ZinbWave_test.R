@@ -6,4 +6,4 @@ matrix <- read.table("Guo_data_prePCA.txt", header=T)
 zinb <- zinbwave(matrix,L=5)
 
 # Save obj
-save(zinb,file="zinb")
+saveRDS(zinb,file="zinb.rds")

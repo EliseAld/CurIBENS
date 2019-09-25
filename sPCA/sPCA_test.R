@@ -20,7 +20,7 @@ matrix <- read.table("Guo_data_prePCA.txt", header=T)
 spca <- sPCA(matrix, norm=T, center=T, transpose=F)
 
 # Save obj
-save(sPCA,file="sPCA.Robj")
+saveRDS(sPCA,file="sPCA.rds")
 
 #av <- peav(t(matrix),spca$rotation,center=F)
 #plot(av)

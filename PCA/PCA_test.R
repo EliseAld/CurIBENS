@@ -51,6 +51,6 @@ PCA <- pca(matrix, norm=T, center=T, transpose=F)
 # The 6th PC look gaussian already
 
 # Save obj
-save(PCA,file="PCA.Robj")
+saveRDS(PCA,file="PCA.rds")
 
 # Let's choose 5 PCs
