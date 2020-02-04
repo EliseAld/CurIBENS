@@ -7,13 +7,17 @@ Dimension reduction
 ####################
 
 On cherche le nombre de features optimal
-- PCA (Elise)
-- UMAP (Elise)
+- PCA (Elise)     
+en cours
+- UMAP (Elise)      
+en cours
 - GOE (Nathalie)
 - Zinb-Wave (both)
 - NMF (Nathalie)
+- Mofa (Nathalie)
 - sparse PCA (Elise)
-https://web.stanford.edu/~hastie/Papers/spc_jcgs.pdf
+https://web.stanford.edu/~hastie/Papers/spc_jcgs.pdf          
+en cours
 
 ####################
 Determining the optimal nb of clusters
@@ -44,4 +48,3 @@ On essaie d'évaluer la justesse du clustering sur le dataset de Guo coupé en t
 - density for each cluster using dbscan (Nathalie)
 - density for each cluster w/ own code (both)
 - MSE on the clustering identity (Elise)
-
